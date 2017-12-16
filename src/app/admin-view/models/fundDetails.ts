@@ -1,0 +1,29 @@
+export class FundDetails {
+    Address: string;
+    Amount: number;
+    CheckNo: string;
+    CheckDate: string;
+    CreatedBy: string;  
+    CreatedDate: string;
+    Date: string;
+    FromWhom: number;
+    FromWhomText: string;
+    FundID: number;
+    FundType: number;
+    FundTypeText: string;
+    IMEINo: string;
+    IsActive: number;
+    MobileNo: string;
+    MobId: number;
+    ModifyBy: string;
+    ModifyDate: string;
+    ModifiedBy: string;
+    ModifiedDate: string;
+    PaidBy: number;
+    PaidByText: string;
+    ProviderBankName: string;
+    ProviderMobileNo: string;
+    ProviderName: string;
+    Status: string;
+    TokenId: string;
+}
