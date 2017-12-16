@@ -1,0 +1,81 @@
+<div class="col-md-10 offset-sm-1">
+  <div class="card">
+    <div class="card-header">
+      <strong>Add Party</strong>
+    </div>
+    <div class="card-block" id="form-container">
+      <form novalidate [formGroup]="partyForm" (ngSubmit)="savePartyData(partyForm.value, partyForm.valid)">
+        <div class="form-group row">
+          <label class=" col-md-6 form-control-label" for="select">Enter Contact Person Mobile No</label>
+          <label class="col-md-6 form-control-label" for="select">Select Party Type</label>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <input type="text" id="ContactPersonMobile" maxlength="10" formControlName="ContactPersonMobile" name="ContactPersonMobile" class="form-control" placeholder="Enter Mobile No">
+                <div class="alert" *ngIf="!partyForm.controls['ContactPersonMobile'].valid && partyForm.controls['ContactPersonMobile'].touched">{{titleAlert}}</div>                      
+              </div>
+          <div class="col-md-6">
+            <select id="selectPartyId" formControlName="PTID" name="PTID" class="form-control">
+              <option value="">--Select--</option>
+              <option value="1">National Parties</option>
+              <option value="2">State Parties in Maharashtra</option>
+              <option value="3">State Parties in other States</option>
+              <option value="4">other Parties</option>
+              <option value="5">Independent</option>
+            </select>
+            <div class="alert" *ngIf="!partyForm.controls['PTID'].valid && partyForm.controls['PTID'].touched">{{titleAlert}}</div>                      
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class=" col-md-6 form-control-label" for="PartyName">Enter Party Name</label>
+          <label id="RegDate" class=" col-md-6 form-control-label" for="RegDate">Select Registration Date</label>          
+        </div>
+        <div class="form-group row">
+          <div class="col-md-6">
+            <input type="text" id="PartyName" formControlName="PartyName" name="PartyName" class="form-control" placeholder="Party Name">
+            <div class="alert" *ngIf="!partyForm.controls['PartyName'].valid && partyForm.controls['PartyName'].touched">{{titleAlert}}</div>                                  
+          </div>
+          <div class="col-md-6">
+            <input id="RegistrationDate" formControlName="RegistrationDate" name="RegistrationDate" type="date" class="form-control" placeholder="RegistrationDate">
+            <div class="alert" *ngIf="!partyForm.controls['RegistrationDate'].valid && partyForm.controls['RegistrationDate'].touched">{{titleAlert}}</div>                                                
+            
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label class=" col-md-6 form-control-label" for="Symbols">Enter Symbol Name</label>
+            <label id="RegDate" class=" col-md-6 form-control-label" for="RegDate">Enter Contact Person Name</label>          
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <input type="text" id="Symbols" formControlName="Symbols" name="Symbols" class="form-control" placeholder="Enter Symbols">
+              <div class="alert" *ngIf="!partyForm.controls['Symbols'].valid && partyForm.controls['Symbols'].touched">{{titleAlert}}</div>                                  
+            </div>
+            <div class="col-md-6">
+              <input id="ContactPersonName" formControlName="ContactPersonName" name="ContactPersonName" type="text" class="form-control" placeholder="Contact Person Name">
+              <div class="alert" *ngIf="!partyForm.controls['ContactPersonName'].valid && partyForm.controls['ContactPersonName'].touched">{{titleAlert}}</div>                                                
+            </div>
+          </div>
+
+          <div class="form-group row">
+              <label class=" col-md-6 form-control-label" for="HeadAddress">Enter Party Head Office Address</label>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <textarea class=" form-control" formControlName="HeadAddress" for="HeadAddress" rows="5" cols="10" id="HeadAddress"></textarea>
+                    <!-- <div class="alert" *ngIf="!partyForm.controls['HeadAddress'].valid && partyForm.controls['HeadAddress'].touched">{{titleAlert}}</div>                                   -->
+                </div>
+              </div>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-sm btn-primary pull-right" [disabled]="!partyForm.valid">
+         Submit</button>
+         <!-- <button type="submit"  *ngIf="isEdit==false" class="btn btn-sm btn-primary pull-right"  [disabled]="!partyForm.valid">
+          Update</button> -->
+      </form>
+    </div>
+  </div>
+
+
